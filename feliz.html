@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Feliz Aniversário, Daniele!</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f0f0f0;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      position: relative;
+    }
+
+    .card {
+      width: 300px;
+      margin: 50px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      display: none;
+      animation: fade-in 1s ease-in-out;
+    }
+
+    h1 {
+      color: #ff6b77;
+    }
+
+    p {
+      color: #666;
+    }
+
+    .signature {
+      margin-top: 30px;
+      font-style: italic;
+    }
+
+    .button-container {
+      margin-top: 50px;
+    }
+
+    .button {
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      background-color: #ff8c94;
+      color: white;
+      cursor: pointer;
+      animation: bounce-in 1s;
+    }
+
+    .button:hover {
+      background-color: #ff6b77;
+    }
+
+    .background {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .hearts {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ff6b77;
+      transform: rotate(45deg);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #ff6b77;
+    }
+
+    .heart::before {
+      border-radius: 50% 50% 0 0;
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      border-radius: 50% 50% 50% 0;
+      top: 0;
+      left: 10px;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(45deg);
+      }
+      50% {
+        transform: translateY(-20px) rotate(45deg);
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(0) rotate(45deg);
+      }
+    }
+
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+  </style>
+  <script>
+    function toggleCard() {
+      var card = document.getElementById("card");
+      if (card.style.display === "none") {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    }
+  </script>
+</head>
+<body style="background-color: #ffe7e9;">
+  <div class="button-container">
+    <button class="button" onclick="toggleCard()">Clique aqui <3</button>
+  </div>
+
+  <div class="card" id="card">
+    <h1 style="color: #ff6b77;">Feliz Aniversário, Daniele!</h1>
+    <p> </p>
+    <p>Dani, Desejo um dia maravilhoso repleto de alegria, amor e realizações. Que esta nova etapa da sua vida seja cheia de momentos especiais e conquistas.</p>
+    <p>Que todos os seus sonhos se realizem e que você continue sendo essa pessoa incrível que tanto admiro. Que sua jornada seja iluminada e que a felicidade esteja sempre presente em seu caminho.</p>
+    <p>Parabéns pelo seu aniversário!</p>
+    <p class="signature">Com carinho, Kaique.</p>
+    <p class="signature"> </p>
+  </div>
+
+  <div class="background">
+    <div class="hearts">
+      <script>
+        var heartContainer = document.querySelector(".hearts");
+        var numberOfHearts = 50;
+
+        for (var i = 0; i < numberOfHearts; i++) {
+          var heart = document.createElement("div");
+          heart.classList.add("heart");
+          heart.style.left = Math.random() * 100 + "vw";
+          heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+          heartContainer.appendChild(heart);
+        }
+      </script>
+    </div>
+  </div>
+</body>
+</html>
